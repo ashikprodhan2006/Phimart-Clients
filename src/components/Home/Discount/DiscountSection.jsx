@@ -1,6 +1,6 @@
 import React from 'react';
-import bgImg from "../../assets/images/banner-image-bg-1.jpg";
-import bannerImg from "../../assets/images/banner-image3.png";
+import bgImg from "../../../assets/images/banner-image-bg-1.jpg";
+import bannerImg from "../../../assets/images/banner-image3.png";
 import DiscountTimer from './DiscountTimer';
 
 const DiscountSection = ( ) => {

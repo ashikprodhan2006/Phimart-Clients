@@ -47,6 +47,7 @@ const Product = () => {
                 <h2 className="text-3xl md:text-4xl font-bold">Trending Products</h2>
                 <a href="#" className="btn btn-secondary px-6 py-6 rounded-full text-lg">View All</a>
             </div>
+            
             {/* Spinner  */}
             {isLoading && (
                 <div className="flex justify-center items-center py-10">
