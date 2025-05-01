@@ -81,11 +81,15 @@ const useAuth = () => {
 
             // After login set user
             await fetchUserProfile();
+
+            return { seccess: true };
         }
         catch (error) {
             // console.log("Login Error", error.data?.response);
             // console.log("Login Error", error.response.data?.detail);
             setErrorMsg(error.response.data?.detail);
+
+            return { seccess: false };
         }
     };
 
@@ -120,6 +124,7 @@ const useAuth = () => {
         setAuthTokens(null);
         setUser(null);
         localStorage.removeItem("authTokens");
+        localStorage.removeItem("cartId");
     };
 
     return { user, errorMsg, loginUser, registerUser, logoutUser, updateUserProfle, changePassword };

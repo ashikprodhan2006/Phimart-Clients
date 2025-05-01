@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import authApiClient from "../services/auth-api-client";
 
 const useCart = () => {
-    const [authToken, setAuthToken] = useState(() => JSON.parse(localStorage.getItem("authTokens")).access);
+    const [authToken, setAuthToken] = useState(() => JSON.parse(localStorage.getItem("authTokens"))?.access);
 
     const [cart, setCart] = useState(null);
     const [cartId, setCartId] = useState(() => localStorage.getItem("cartId"));
@@ -13,7 +13,7 @@ const useCart = () => {
     const createOrGetCart = useCallback(async () => {
         setLoading(true);
         try {
-            console.log(authToken);
+            // console.log(authToken);
             // const response = await apiClient.post("/carts/", {}, {Headers: {Authorization: `JWT ${authToken}` }});
             const response = await authApiClient.post("/carts/");
             // console.log(response.data);
@@ -32,7 +32,7 @@ const useCart = () => {
             setLoading(false);
         }
 
-    }, [authToken, cartId]);
+    }, [cartId]);
 
     // Add items to the cart
     const AddCartItems = useCallback(async(product_id, quantity) => {
@@ -81,7 +81,7 @@ const useCart = () => {
         initializeCart();
     }, [createOrGetCart]);
 
-    return { cart, loading, createOrGetCart, AddCartItems, updateCartItemQuantity, deleteCartItems };
+    return { cart, loading, cartId, createOrGetCart, AddCartItems, updateCartItemQuantity, deleteCartItems };
 };
 
 export default useCart;
