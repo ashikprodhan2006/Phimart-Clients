@@ -18,7 +18,7 @@ const Product = () => {
 
     useEffect(() => {
         setLoading(true);
-        // axios.get("https://phi-mart-gamma.vercel.app/api/v1/products/")
+        // axios.get("https://phi-mart-kohl.vercel.app/api/v1/products/")
         // axios
             // .get("http://127.0.0.1:8000/api/v1/products/")
             // .then((res) => console.log(res.data.results))

@@ -8,7 +8,7 @@ const ProductItem = ( { product }) => {
             <div>
                 <div className="card bg-base-100 w-96 shadow-sm">
                     <figure className="px-10 pt-10">
-                        <img src={product.images.lenght > 0 ? product.images[0].image : defaultImage} alt="Shoes" className="rounded-xl" />
+                        <img src={product.images.length > 0 ? product.images[0].image : defaultImage} alt="Shoes" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">{product.name}</h2>
