@@ -13,7 +13,6 @@ const Product = () => {
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-<<<<<<< HEAD
     useEffect(() => {
         setLoading(true);
         // axios.get("https://phi-mart-kohl.vercel.app/api/v1/products/")
@@ -31,16 +30,6 @@ const Product = () => {
             .catch((err) => setError(err.message))
             .finally(() => setLoading(false));
     }, []);
-=======
-  useEffect(() => {
-    setLoading(true);
-    apiClient
-      .get("/products/")
-      .then((res) => setProducts(res.data.results))
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, []);
->>>>>>> module-39
 
   return (
     <section className="bg-gray-50">
