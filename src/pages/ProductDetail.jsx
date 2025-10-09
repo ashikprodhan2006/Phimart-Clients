@@ -4,6 +4,8 @@ import AddToCartButton from '../components/ProductDetails/AddToCartButton';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useParams } from 'react-router';
 import apiClient from '../services/api-client';
+import ReviewSection from '../components/Reviews/ReviewSection';
+
 
 
 const ProductDetail = () => {
@@ -104,6 +106,7 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
+            <ReviewSection />
         </div>
     );
 };

@@ -14,40 +14,50 @@ import fashion from "../../../assets/images/fashion.png";
 import technology from "../../../assets/images/technology.png";
 
 const HeroCarousel = () => {
-    const slides = [
-        {
-            title: "This Fine Print Book Collections",
-            subtitle: "Discount available. Grab it now!",
-            image: book,
-        },
-        {
-            title: "Exclusive Fashion Collections",
-            subtitle: "A specialists label creating luxury essentials!",
-            image: fashion,
-        },
-        {
-            title: "Your Digital World, Connected.",
-            subtitle: "Explore a range of devices for seamless living.",
-            image: technology,
-        },
-    ];
+  const slides = [
+    {
+      title: "This Fine Print Book Collections",
+      subtitle: "Discount available. Grab it now!",
+      image: book,
+    },
+    {
+      title: "Exclusive Fashion Collections",
+      subtitle: "A specialists label creating luxury essentials!",
+      image: fashion,
+    },
+    {
+      title: "Your Digital World, Connected.",
+      subtitle: "Explore a range of devices for seamless living.",
+      image: technology,
+    },
+  ];
 
-    return (
-        <>
-            <Swiper autoplay={{ delay: 3000, disableOnInteraction: false, }}
-                pagination={{ clickable: true, }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper">
-
-                {slides.map((slide, index) => (
-                    <SwiperSlide key={index}>
-                        <CarouselSlide title={slide.title} subtitle={slide.subtitle} image={slide.image}/>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </>
-    );
+  return (
+    <>
+      <Swiper
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <CarouselSlide
+              title={slide.title}
+              subtitle={slide.subtitle}
+              image={slide.image}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
+  );
 };
 
 export default HeroCarousel;
